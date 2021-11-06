@@ -1,0 +1,33 @@
+#header {
+    position: absolute;
+    top: 0;
+    width: 90vw;
+    height: 10vh;
+    border-bottom: 2.5px solid rgb(43, 42, 42);
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 999;
+    
+    .header__tag {
+        text-decoration: none;
+        color: #f8f8f8;
+        font-weight: 400;
+        font-size: medium;
+
+        :hover {
+            border-bottom: 1.5px solid #f8f8f8;
+        }
+    }
+
+    #dropdown__btn {
+        cursor: pointer;
+        border-bottom: 1.5px solid transparent;
+    }
+
+    #dropdown__btn:hover {
+        border-bottom: 1.5px solid #f8f8f8;
+    }
+}

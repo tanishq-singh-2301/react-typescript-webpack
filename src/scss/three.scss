@@ -1,0 +1,35 @@
+#three-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: #f8f8f8;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+    
+    #three-canvas {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        outline: none;
+    }
+
+    .loading-bar {
+        position: absolute;
+        top: 50%;
+        width: 50%;
+        height: 3px;
+        background: #ffffff;
+        transform: scaleX(0.3);
+        transform-origin: top left;
+        transition: transform 0.5s;
+    }
+
+    .loading-bar.ended {
+        transform: scaleX(0);
+        transform-origin: 100% 0;
+        transition: transform 1.5s ease-in-out;
+    }
+}

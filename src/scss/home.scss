@@ -1,0 +1,25 @@
+#home-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #121212;
+    color: #f8f8f8;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    position: relative;
+
+    a {
+        text-decoration: none;
+        color: #f8f8f8;
+    }
+
+    #greeting {
+        font-weight: 200;
+        font-style: italic;
+        font-size: xx-large;
+        text-align: center;
+        border-bottom: 1px solid #f8f8f8;
+        cursor: pointer;
+    }
+}
