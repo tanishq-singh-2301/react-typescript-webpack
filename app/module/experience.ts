@@ -152,7 +152,7 @@ class Car {
     setVehicle() {
         this.chassisBody = new CANNON.Body({
             mass: 150,
-            shape: new CANNON.Box(new CANNON.Vec3(1, 0.5, 2.9)),
+            shape: new CANNON.Box(new CANNON.Vec3(1, 0.5, 1.5)),
             position: new CANNON.Vec3(0, 1, 0),
             angularVelocity: new CANNON.Vec3(0, 0, 0)
         });
@@ -244,7 +244,7 @@ class Car {
     };
 
     setControls() {
-        var maxSteerVal = 0.5;
+        var maxSteerVal = Math.PI / 3;
         var maxForce = 1000;
         var brakeForce = 10000;
         const handler = (event: KeyboardEvent) => {
@@ -259,6 +259,20 @@ class Car {
             this.vehicle.setBrake(0, 3);
 
             switch (event.key) {
+                case 'ArrowRight': // right
+                case 'd':
+                case 'D':
+                    this.vehicle.setSteeringValue(up ? 0 : -maxSteerVal, 0);
+                    this.vehicle.setSteeringValue(up ? 0 : -maxSteerVal, 1);
+                    break;
+
+                case 'ArrowLeft': // left
+                case 'a':
+                case 'A':
+                    this.vehicle.setSteeringValue(up ? 0 : maxSteerVal, 0);
+                    this.vehicle.setSteeringValue(up ? 0 : maxSteerVal, 1);
+                    break;
+
                 case 'ArrowUp': // forward
                 case 'w':
                 case 'W':
@@ -280,19 +294,7 @@ class Car {
                     this.vehicle.setBrake(brakeForce, 3);
                     break;
 
-                case 'ArrowRight': // right
-                case 'd':
-                case 'D':
-                    this.vehicle.setSteeringValue(up ? 0 : -maxSteerVal, 0);
-                    this.vehicle.setSteeringValue(up ? 0 : -maxSteerVal, 1);
-                    break;
 
-                case 'ArrowLeft': // left
-                case 'a':
-                case 'A':
-                    this.vehicle.setSteeringValue(up ? 0 : maxSteerVal, 0);
-                    this.vehicle.setSteeringValue(up ? 0 : maxSteerVal, 1);
-                    break;
             };
         };
 

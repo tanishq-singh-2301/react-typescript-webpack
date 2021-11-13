@@ -10,7 +10,7 @@ const Home: FC<{}> = () => {
     return (
         <section id='home-page'>
             <Header title={'react typescript webpack'} imoji={'👻'} />
-            <h1 id='greeting' onClick={() => window.open('https://tanishq-singh.herokuapp.com', '_blank')} >made by tanishq singh 🐒</h1>
+            <h1 id='greeting' onClick={() => window.open('https://tanishq-singh.herokuapp.com', '_blank')} >made by tanishq singh 🤖</h1>
         </section>
     )
 };
